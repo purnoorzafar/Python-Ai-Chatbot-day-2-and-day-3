@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <h2>
+                    AI Assistant
+                </h2>
+
+                <span>
+                    Python AI Chatbot
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NEW CHAT -->
+
+        <button
+            class="new-chat"
+            onclick="newChat()"
+        >
+
+            <span>
+                ＋
+            </span>
+
+            New Chat
+
+        </button>
+
+
+        <!-- WORKSPACE -->
+
+        <div class="sidebar-section">
+
+            <p class="section-title">
+                WORKSPACE
+            </p>
+
+
+            <button
+                class="side-button active"
+            >
+
+                <span>
+                    💬
+                </span>
+
+                Current Chat
+
+            </button>
+
+
+            <!-- RECENT CHATS -->
+
+            <p class="section-title recent-title">
+                RECENT CHATS
+            </p>
+
+
+            <div
+                id="chatHistory"
+                class="chat-history"
+            ></div>
+
+
+        </div>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <button class="side-button">
+
+                <span>
+                    ⚙
+                </span>
+
+                Settings
+
+            </button>
+
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+                    P
+                </div>
+
+                <div>
+
+                    <strong>
+                        Purnoor
+                    </strong>
+
+                    <small>
+                        AI Developer
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-brand">
+
+                <span>
+                    ✦
+                </span>
+
+                AI Assistant
+
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Demo Mode
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             CHAT AREA
+        ========================== -->
+
+        <section
+            class="chat-area"
+            id="chatArea"
+        >
+
+
+            <div
+                class="welcome"
+                id="welcome"
+            >
+
+                <div class="welcome-icon">
+                    ✦
+                </div>
+
+
+                <h1>
+                    Good evening, Purnoor 👋
+                </h1>
+
+
+                <p>
+                    Your intelligent Python-powered assistant.
+                    Ask me anything to get started.
+                </p>
+
+
+                <div class="suggestions">
+
+
+                    <button
+                        onclick="useSuggestion('What is Python?')"
+                    >
+
+                        <span>
+                            🐍
+                        </span>
+
+                        What is Python?
+
+                    </button>
+
+
+                    <button
+                        onclick="useSuggestion('Who are you?')"
+                    >
+
+                        <span>
+                            🤖
+                        </span>
+
+                        Who are you?
+
+                    </button>
+
+
+                    <button
+                        onclick="useSuggestion('Hello')"
+                    >
+
+                        <span>
+                            ✨
+                        </span>
+
+                        Say hello
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INPUT
+        ========================== -->
+
+        <div class="input-container">
+
+
+            <div class="input-box">
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Ask anything..."
+                    rows="1"
+                    onkeydown="handleKey(event)"
+                ></textarea>
+
+
+                <button
+                    class="send-button"
+                    id="sendButton"
+                    onclick="sendMessage()"
+                >
+
+                    ➤
+
+                </button>
+
+            </div>
+
+
+            <p class="input-note">
+
+                AI Assistant may generate inaccurate information.
+
+            </p>
+
+
+        </div>
+
+
+    </main>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}"
+></script>
+
+</body>
+
+</html>
